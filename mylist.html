@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">	
+		body{
+			height: 3000px;
+		}
+		.top{
+			position: fixed;
+			right: 20px;
+			bottom: 20px;
+			width: 30px;
+			height: 30px;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- 自定义列表
+	<dt>111</dt>
+	<dd>123</dd> 
+	-->
+	<!-- <button id="btn">Create</button>
+	<ul id="ul1">
+		<li>123</li>
+	</ul> -->
+	<div class="top" id="top">Top</div>
+	<script type="text/javascript">
+
+		/*var oUl=document.getElementById('btn');
+		var oBtn=document.getElementById('ul1');
+		oBtn.onclick=function () {
+			var oLi=document.createElement('li');
+			oLi.innerHTML='asdasd';
+			oUl.appendChild(oLi);
+		}
+	*/
+	/*个人回到顶部
+	var oTop=document.getElementById('top');
+	oTop.onclick=function(){
+
+	var oScr=document.documentElement.scrollTop||document.body.scrollTop;
+		if (oScr>2000) {
+			
+				window.scrollTo(0,0);
+			
+		}
+	}*/
+
+	var oTop=document.getElementById('top');
+	oTop.onclick=function(){
+		var iScrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+		var timer=setInterval(function(){
+			window.scrollTo(0,iScrollTop*=0.8);
+			if (iScrollTop<=1) {
+				window.scrollTo(0,0);
+				clearInterval(timer);
+			}
+		},20);
+		return false;
+	};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script> 
+</body>
+</html>
