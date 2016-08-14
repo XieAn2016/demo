@@ -1,0 +1,26 @@
+@mixin arrow($width,$color,$direction){
+	width: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	border-width: $width;
+	@if $direction=='up'{
+		border-color: transparent transparent $color transparent;
+		border-style: dotted dotted dotted solid;
+	}
+	@if $direction=='right'{
+		border-color: transparent transparent transparent $color;
+		border-style: dotted dotted dotted solid;
+	}
+	@if $direction=='down'{
+		border-color: $color transparent transparent transparent;
+		border-style: solid dotted dotted dotted;
+	}
+	@if $direction=='left'{
+		border-color: transparent $color transparent transparent;
+		border-style: dotted solid dotted dotted;
+	}
+}
+.icon{
+	@include arrow(200px,blue,up);
+}

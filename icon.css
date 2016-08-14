@@ -1,0 +1,10 @@
+.icon {
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  border-width: 200px;
+  border-color: transparent transparent blue transparent;
+  border-style: dotted dotted dotted solid; }
+
+/*# sourceMappingURL=icon.css.map */

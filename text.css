@@ -1,0 +1,118 @@
+body {
+  background: nav;
+  height: 200px;
+  padding-top: 20px;
+  padding-left: 30px;
+}
+body a {
+  font-size: 12px;
+}
+body a:hover {
+  color: red;
+}
+
+.nav {
+  background: #000;
+}
+
+/* @mixin aa{
+	padding: 20px;
+	background: #000;
+
+}
+.item{
+	@include aa();
+} */
+/* .item{
+	@include aa(red);
+} */
+.item {
+  padding: 20px;
+  background: #999;
+}
+
+/* .a{
+	background: red;
+	padding: 10px;
+}
+.b{
+	@extend .a;
+} */
+.b {
+  background: red;
+  padding: 10px;
+}
+
+.nav {
+  width: 50px;
+}
+
+.item1 {
+  width: 30;
+}
+
+.item2 {
+  width: 60;
+}
+
+.item3 {
+  width: 90;
+}
+
+.item4 {
+  width: 120;
+}
+
+.item5 {
+  width: 150;
+}
+
+.item1 {
+  width: 30;
+}
+
+.item2 {
+  width: 60;
+}
+
+.item3 {
+  width: 90;
+}
+
+.item4 {
+  width: 120;
+}
+
+.item5 {
+  width: 150;
+}
+
+.item6 {
+  width: 180;
+}
+
+.nav1 {
+  width: 101px;
+}
+
+.nav3 {
+  width: 103px;
+}
+
+.nav5 {
+  width: 105px;
+}
+
+.nav-err {
+  direction: err;
+}
+
+.nav-right {
+  direction: right;
+}
+
+.nav-warn {
+  direction: warn;
+}
+
+/*# sourceMappingURL=text.css.map */

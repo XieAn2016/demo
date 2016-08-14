@@ -1,0 +1,95 @@
+$color:nav;
+$color:yellow !default;
+body{
+	background:$color;
+	height:200px;
+	a{
+		font-size:12px;
+		&:hover{
+			color:red;
+		}
+	}
+	padding:{
+		top:20px;
+		left:30px;
+	}
+}
+.#{$color}{
+	background:#000
+}
+/* @mixin aa{
+	padding: 20px;
+	background: #000;
+
+}
+.item{
+	@include aa();
+} */
+
+
+
+
+
+@mixin aa($c:#999){
+	padding: 20px;
+	background: $c;
+
+}
+/* .item{
+	@include aa(red);
+} */
+.item{
+	@include aa();
+}
+
+
+/* .a{
+	background: red;
+	padding: 10px;
+}
+.b{
+	@extend .a;
+} */
+%a{
+	background: red;
+	padding: 10px;
+}
+.b{
+	@extend %a;
+}
+
+
+@function add($i){
+	@return $i+30;
+}
+.nav{
+	width:add(20px);
+}
+
+
+@for $i from 1 to 6{
+	.item#{$i}{
+		width: $i*30;
+	}
+} 
+
+@for $i from 1 through 6{
+	.item#{$i}{
+		width: $i*30;
+	}
+} 
+
+$i:1;
+@while $i<6{
+	.nav#{$i}{
+		width: $i+100px;
+	}
+	$i:$i+2;
+}
+
+$incons:err right warn;
+@each $j in $incons{
+	.nav-#{$j}{
+		direction: #{$j};
+	}
+}

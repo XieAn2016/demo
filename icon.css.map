@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAuBA,KAAK;EAtBJ,KAAK,EAAE,CAAC;EACR,MAAM,EAAE,CAAC;EACT,SAAS,EAAE,CAAC;EACZ,WAAW,EAAE,CAAC;EACd,YAAY,EAmBG,KAAK;EAjBnB,YAAY,EAAE,wCAA0C;EACxD,YAAY,EAAE,0BAA0B",
+"sources": ["arrow.scss"],
+"names": [],
+"file": "icon.css"
+}
