@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新窗口打开网站</title>
+	<script type="text/javascript">
+	function rec() {
+		var con=confirm("IS open a new window?");
+		if (con==true) {
+			var u = prompt("Iput new URL","http://www.imooc.com/");
+			if(u.length>0&&u!="http://www.imooc.com/"){
+				window.open(u,'width=400,height=500,menubar=no,toolbar=no');
+			}else{
+				window.open('http://www.imooc.com/','_blank','width=400,height=500,menubar=no,toolbar=no');
+			}
+		}
+		
+
+	}
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="Click"  onclick="rec()" />
+</body>
+</html>
