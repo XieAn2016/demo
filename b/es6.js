@@ -74,9 +74,10 @@ console.log(obj1);
 
 */
 
-var arr =[1,2,3,[4,5]];
+/*var arr =[1,2,3,[4,5]];
 var [a,b,c,d]=arr;
 console.log(a,b,c,d);
+*/
 
 
 
