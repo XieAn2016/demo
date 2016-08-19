@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+		.content{
+			width: 1000px;
+		}
+	</style>
+</head>
+<body ng-app="" class="container">
+	<div ng-controller="firstController" class="content">
+		<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        
+      </form>
+		<table class="table dropup" >
+			<thead>
+				<td class="dropup">产品编号<span class="caret"></span></td>
+				<td class="dropup">产品名字<span class="caret"></span></td>		
+				<td class="dropup">产品单价<span class="caret"></span></td>
+			</thead>
+			<tr ng-repeat="product in products">
+				<td>{{product.id}}</td>
+				<td>{{product.name}}</td>
+				<td>{{product.price |currency:"￥"}}</td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.12.2.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript">
+		function firstController($scope){
+			$scope.products=[
+				{
+					'id':3300,
+					'name':'iphone5',
+					'number':30,
+					'price':3300
+				},
+				{
+					'id':232,
+					'name':'imac',
+					'number':3,
+					'price':23000
+				},
+				{
+					'id':2000,
+					'name':'ipad',
+					'number':5,
+					'price':6900
+				},
+				{
+					'id':3132,
+					'name':'ipad mini',
+					'number':4,
+					'price':2400
+				},
+				{
+					'id':3983,
+					'name':'ipad air',
+					'number':4,
+					'price':2340
+				}
+			]
+				
+				
+				$scope.$watch($scope.products[2].number,function(newVal,oldVal){
+					console.log(newVal);
+					// if(newVal<0){
+					// 	alert('I am sad');
+					// 	//$scope.products[2].number=0;
+					// }
+					//console.log($scope.products[2].name);
+				})
+
+			}
+	</script>
+</body>
+</html>

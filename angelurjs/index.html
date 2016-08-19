@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body ng-app="">
+	<div ng-controller="firstController">
+		<table class="table">
+			<tr>
+				<td>产品编号</td>
+				<td>产品名字</td>
+				<td>购买数量</td>
+				<td>产品单价</td>
+				<td>产品总价</td>
+				<td>操作</td>
+			</tr>
+			<tr ng-repeat="product in products">
+				<td>{{product.id}}</td>
+				<td>{{product.name}}</td>
+				<td><button type="button" class="btn btn-primary" ng-click="aa($index)">-</button><input type="text" ng-model="product.number"><button type="button" class="btn btn-primary" ng-click="bb($index)">+</button></td>
+				<td>{{product.price |currency:"￥"}}</td>
+				<td>{{sum($index)|currency:"￥"}}</td>
+				<td><button type="button" class="btn btn-danger" ng-click="dd($index)">删除</button></td>
+			</tr>
+			<tr>
+				<td>购买总价</td>
+				<td>{{allsum()|currency:"￥"}}</td>
+				<td>购买总数量</td>
+				<td>{{all()}}</td>
+				<td colspan=2><button type="button" class="btn btn-danger" ng-click="cc()">清空购物车</button></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.12.2.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript">
+		function firstController($scope){
+			$scope.products=[
+				{
+					'id':3300,
+					'name':'iphone5',
+					'number':30,
+					'price':3300
+				},
+				{
+					'id':232,
+					'name':'imac',
+					'number':3,
+					'price':23000
+				},
+				{
+					'id':2000,
+					'name':'ipad',
+					'number':5,
+					'price':6900
+				},
+			]
+				$scope.aa=function($index){
+					if ($scope.products[$index].number>0) {
+						$scope.products[$index].number--;
+					}else{
+						alert('伦家不能再减了啦~~~')
+					}
+					
+				}
+				$scope.bb=function($index){
+					$scope.products[$index].number++;
+				}
+				$scope.cc=function(){
+					$scope.products={
+
+					};
+				}
+				$scope.dd=function($index){
+					$scope.products.splice($index,1);
+				}
+				$scope.$watch($scope.products[2].number,function(newVal,oldVal){
+					console.log(newVal);
+					// if(newVal<0){
+					// 	alert('I am sad');
+					// 	//$scope.products[2].number=0;
+					// }
+					//console.log($scope.products[2].name);
+				})
+
+				$scope.sum = function($index){
+					return $scope.products[$index].price*$scope.products[$index].number;
+				}
+
+
+
+				$scope.allsum=function(){
+					var asum=0;
+					for (var i = 0; i < $scope.products.length; i++) {
+						asum+=$scope.products[i].price*$scope.products[i].number;
+					}
+					return asum;
+				}
+
+
+
+
+
+				$scope.all=function(){
+					var al=0;
+					angular.forEach($scope.products,function(value){
+						al+=value.number;
+					});
+					return al;
+				}
+				
+
+				//console.log($scope.product.price * );
+				
+			}
+	</script>
+</body>
+</html>
