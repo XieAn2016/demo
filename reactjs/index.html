@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+   	<div id="app"></div>
+	<script type="text/javascript" src="react-0.14.7/build/react.js"></script>
+	<script type="text/javascript" src="react-0.14.7/build/react-dom.js"></script>
+	<script type="text/javascript" src="browser.js"></script><!-- 使支持-->
+	<!-- <script type="text/javascript">
+	//两个参数，显示内容，显示 地方
+	ReactDom.render(
+		,document.getElementById('app'));
+	</script>
+	<script type="text/babel">
+		ReactDOM.render(
+		<h1>Hello</h1>
+		,document.getElementById('app'));
+	</script> -->
+	<script type="text/babel">
+		var SubMessage = React.createClass({
+		render:function(){
+			return(
+				<div>submessage</div>
+			)
+		}
+		})
+		//组件首字母大写
+		var Messagebox = React.createClass({
+		render:function(){
+			return (
+				<div>messbox
+					<SubMessage />
+				</div>
+			)
+		}
+		});		
+
+		ReactDOM.render(<Messagebox />,document.getElementById('app'));
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
