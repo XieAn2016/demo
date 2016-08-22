@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+
 </head>
 <body>
    	<div id="app"></div>
@@ -11,15 +12,15 @@
 	<script type="text/javascript" src="browser.js"></script><!-- 使支持-->
 	<!-- <script type="text/javascript">
 	//两个参数，显示内容，显示 地方
-	ReactDom.render(
-		,document.getElementById('app'));
-	</script>
-	<script type="text/babel">
+	ReactDOM.render(
+		React.createElement('h1',{name:'hahh',className:'aa'},'hello'),document.getElementById('app'));
+	</script> -->
+	<!-- <script type="text/babel">
 		ReactDOM.render(
 		<h1>Hello</h1>
 		,document.getElementById('app'));
 	</script> -->
-	<script type="text/babel">
+	<!-- <script type="text/babel">
 		var SubMessage = React.createClass({
 		render:function(){
 			return(
@@ -37,16 +38,82 @@
 			)
 		}
 		});		
-
+	
 		ReactDOM.render(<Messagebox />,document.getElementById('app'));
+	
+	</script> -->
 
+	<!-- <script type="text/babel">
+		var Count = React.createClass({
+			getInitialState:function(){
+				return{
+					count:0
+				};
+			},
+			handleClick:function(e){
+				this.setState({
+					count:this.state.count+1
+				})
+			},
+			render:function(){
+				return(
+					<div>
+						<button onClick={this.handleClick}>点击</button>
+						<p>点击了：{this.state.count}次</p>
+					</div>
+				)
+			}
+		});
+		ReactDOM.render(<Count />,document.getElementById('app'));
+	</script> -->
+	<!-- <script type="text/babel">
+		var SubMessagebox=React.createClass({
+			getDefaultProps:function(){
+				return{
+					str:'默认的str'
+				};
+			},
+			render:function(){
+				return(
+					<div>{this.props.str}{this.props.data}</div>
+				);
+			}
+			
+		});
+		var Messagebox =React.createClass({
+			render:function(){
+				var str1='abc';
+				var data=123;
+	
+				return(<div>
+				<SubMessagebox str={str1} data={data}/></div>);
+			}
+		})
+		ReactDOM.render(<Messagebox />,document.getElementById('app'))
+	</script> -->
+	<script type="text/babel">
+		var SubMessage=React.createClass({
+			getDefaultProps=function(){
+				return{
+					arr:[]
+				};
+			},
+			render:function({
+				var msg = [];
 
+			})
 
-
+		})
+		var Messagebox = React.createClass({
+			render:function({
+				var arr = [1,2,3];
+				return(
+					<div><SubMessagebox /></div>
+				)
+			})
+		});
+		ReactDOM.render(<Messagebox />,document.getElementById('app'));
 	</script>
-
-
-
 
 
 
